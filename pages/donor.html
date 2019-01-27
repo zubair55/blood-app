@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase Auth</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+   
+        #an {
+            animation-name: ath;
+            animation-direction: normal;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-duration: 1s;
+        }
+        @keyframes ath {
+  0%   {box-shadow: 0px 0px 5px 5px rgb(31, 31, 31)}
+  50%  {box-shadow: 0px 0px 10px 10px rgb(31, 31, 31)}
+  100% {box-shadow: 0px 0px 5px 5px rgb(31, 31, 31)}
+}
+
+    
+    </style>
+</head>
+
+<body onload="showdonor()">
+    
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDa5-inLONKv7Nb4GaDDDSGqVTN5NVleMs",
+    authDomain: "fir-blood-bank-app.firebaseapp.com",
+    databaseURL: "https://fir-blood-bank-app.firebaseio.com",
+    projectId: "fir-blood-bank-app",
+    storageBucket: "fir-blood-bank-app.appspot.com",
+    messagingSenderId: "56356386206"
+  };
+  firebase.initializeApp(config);
+</script>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span style="border:2px solid white;border-radius: 10px;padding: 10px;">bloodbanks</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <!-- <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../pages/signIn.html" id="signin"><span class="glyphicon glyphicon-log-in"></span>
+                            Sign In</a></li>
+                    <li><a href="javaScript:Void(0)" id="logout" onClick="logOut()"><span class="glyphicon glyphicon-log-out"></span>
+                            Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 style="text-align: center">DONOR'S LIST</h1>
+    <div class="col-md-8 col-md-offset-2 text-center">
+        <h2 id="auth"></h2>
+    </div>
+
+    
+
+    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3">
+        <ul id="tsk" class="list-group">
+            
+          </ul>
+    </div><br>
+<div class="col-md-6 col-md-offset-3">
+
+
+<div style="color:black;width: 500px;height: auto;padding-bottom: 100px; background-color: white;margin: auto;border: 4px solid black;border-radius: 10px;margin-bottom: 100px;box-shadow: 10px 10px 10px 1px black" id="main">
+    
+</div>
+
+    
+    <script src="../js/auth.js"></script>
+    <script>
+//         function show(){
+//     let userUid = firebase.auth().currentUser.uid
+//     if (userUid !== null || userUid !== undefined) {
+//         // let name = document.getElementById("name").value
+//         // let message = document.getElementById("message").value
+
+//         // let post = {
+//         //     name,
+//         //     message
+//         // }
+//         let get = localStorage.getItem("userButh");
+//     let data1 = JSON.parse(get)
+//         let posts = document.getElementById("name1")
+//         firebase.database().ref('users/' + userUid)
+//             .push(data1)
+//             .then((succ) => {
+//                 firebase.database().ref('users/' + userUid)
+//                     .once("value", (data) => {
+//                         console.log(data)
+//                         let userData = data.val()
+//                         console.log(userData)
+//                         for(var key in userData){
+//                             var names = userData[key].name;
+//                             var email = userData[key].email;
+
+//                             var p=document.createElement('p');
+//                             p.setAttribute("id","data");
+//                             p.innerText="NAME : " + names + "\nEmail : " + email;
+//                             document.body.appendChild(p);
+                            
+//                         }
+//                     })
+//             })
+//             .catch((error) => {
+//                 console.log(error.message);
+//             })
+//     }
+// }
+    </script> 
+</body>
+
+</html>
